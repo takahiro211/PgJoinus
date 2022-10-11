@@ -1,8 +1,9 @@
 import "../js/bootstrap";
 import "../css/app.css";
 import React from "react";
+import * as ReactDom from 'react-dom';
 import { createRoot } from 'react-dom/client';
-import { Typography, TextField, Button, CssBaseline, Container, DialogTitle, Dialog } from '@material-ui/core';
+import { TextField, Button, CssBaseline, Container, DialogTitle, Dialog, DialogContent } from '@material-ui/core';
 
 
 type HelloDialogProps = {
@@ -17,7 +18,7 @@ function HelloDialog(props: HelloDialogProps) {
     return (
       <Dialog onClose={onClose} open={open}>
         <DialogTitle>ご挨拶</DialogTitle>
-        <Typography variant="h5">こんにちは、{name}さん！</Typography>
+        <DialogContent>こんにちは、{name}さん！</DialogContent>
       </Dialog>
     );
   }
@@ -44,39 +45,38 @@ const App = () => {
       }
 
     return (
-    <>        
-        <Container maxWidth="sm" >
-        <CssBaseline />
-        <h1>{title}</h1>
-        <Button
-            variant="contained"
-            color="primary" >
-            Hello World
-        </Button>
-        <h2>ようこそ</h2>
-        <form>
-            <TextField
-            label="名前"
-            name="name"
-            variant="outlined"
-            size="small"
-            fullWidth
-            margin="normal"
-            onChange={handleNameChange} />
-            <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            disabled={buttonDisabled}
-            onClick={handleClickOpen} >
-            Click!
-            </Button>
-            <HelloDialog open={open} name={name} onClose={handleClose} />
-        </form>
-        </Container>
-    </>
+      <Container maxWidth="sm" >
+      <CssBaseline />
+      <h1>{title}</h1>
+      <Button
+          variant="contained"
+          color="primary" >
+          Hello World
+      </Button>
+      <h2>ようこそ</h2>
+      <form>
+          <TextField
+          label="名前"
+          name="name"
+          variant="outlined"
+          size="small"
+          fullWidth
+          margin="normal"
+          onChange={handleNameChange} />
+          <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          disabled={buttonDisabled}
+          onClick={handleClickOpen} >
+          Click!
+          </Button>
+          <HelloDialog open={open} name={name} onClose={handleClose} />
+      </form>
+      </Container>
     );
 };
-const container = document.getElementById('app') as HTMLInputElement;
-const root = createRoot(container);
-root.render(<App />);
+// const container = document.getElementById('app') as HTMLInputElement;
+// const root = createRoot(container);
+// root.render(<App />);
+ReactDom.render(<App />, document.getElementById('app'));
