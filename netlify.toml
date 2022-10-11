@@ -1,5 +1,4 @@
 [[redirects]]
   from = "/*"
-  to = "/index.php"
+  to = "/public/index.php"
   status = 200
-  
