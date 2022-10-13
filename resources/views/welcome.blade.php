@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ config('app.name') }}</title>
         @viteReactRefresh
-        @vite('resources/ts/app.tsx')
+        @vite('resources/ts/App.tsx')
     </head>
     <body>
         <div id="app"></div>

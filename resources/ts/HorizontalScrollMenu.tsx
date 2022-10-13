@@ -2,6 +2,7 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import { createStyles, makeStyles } from '@mui/material';
 
 export default function ScrollableTabsButtonPrevent() {
   const [value, setValue] = React.useState(0);
@@ -18,6 +19,8 @@ export default function ScrollableTabsButtonPrevent() {
         variant="scrollable"
         scrollButtons={false}
         aria-label="scrollable prevent tabs example"
+        textColor='secondary'
+        indicatorColor='secondary'
         TabIndicatorProps={{style: {background:'white'}}}
       >
         <Tab label="Item One" />
