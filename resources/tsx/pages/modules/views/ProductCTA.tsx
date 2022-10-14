@@ -70,7 +70,7 @@ function ProductCTA() {
               right: 0,
               bottom: 0,
               width: '100%',
-              background: 'url(./img/productCTAImageDots.png)',
+              background: 'url(/img/productCTAImageDots.png)',
             }}
           />
           <Box

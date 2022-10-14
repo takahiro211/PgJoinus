@@ -44,7 +44,7 @@ function ProductHowItWorks() {
       >
         <Box
           component="img"
-          src="./img/productCurvyLines.png"
+          src="/img/productCurvyLines.png"
           alt="curvy lines"
           sx={{
             pointerEvents: 'none',
@@ -63,7 +63,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>1.</Box>
                 <Box
                   component="img"
-                  src="./img/productHowItWorks1.svg"
+                  src="/img/productHowItWorks1.svg"
                   alt="suitcase"
                   sx={image}
                 />
@@ -77,7 +77,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>2.</Box>
                 <Box
                   component="img"
-                  src="./img/productHowItWorks2.svg"
+                  src="/img/productHowItWorks2.svg"
                   alt="graph"
                   sx={image}
                 />
@@ -92,7 +92,7 @@ function ProductHowItWorks() {
                 <Box sx={number}>3.</Box>
                 <Box
                   component="img"
-                  src="./img/productHowItWorks3.svg"
+                  src="/img/productHowItWorks3.svg"
                   alt="clock"
                   sx={image}
                 />

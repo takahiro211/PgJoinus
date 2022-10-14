@@ -6,9 +6,9 @@ import Typography from './modules/components/Typography';
 import AppAppBar from './modules/views/AppAppBar';
 import AppFooter from './modules/views/AppFooter';
 import withRoot from './modules/withRoot';
-import terms from './modules/views/terms.md';
 
 function Terms() {
+  const terms = 'terms'
   return (
     <React.Fragment>
       <AppAppBar />

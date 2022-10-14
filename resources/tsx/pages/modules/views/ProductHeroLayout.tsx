@@ -48,7 +48,7 @@ export default function ProductHeroLayout(
         }}
       >
         <img
-          src="./img/productHeroWonder.png"
+          src="/img/productHeroWonder.png"
           alt="wonder"
           width="147"
           height="80"
@@ -69,7 +69,7 @@ export default function ProductHeroLayout(
         <Background sx={sxBackground} />
         <Box
           component="img"
-          src="./img/productHeroArrowDown.png"
+          src="/img/productHeroArrowDown.png"
           height="16"
           width="12"
           alt="arrow down"

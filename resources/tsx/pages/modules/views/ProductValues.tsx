@@ -22,7 +22,7 @@ function ProductValues() {
       <Container sx={{ mt: 15, mb: 30, display: 'flex', position: 'relative' }}>
         <Box
           component="img"
-          src="./img/productCurvyLines.png"
+          src="/img/productCurvyLines.png"
           alt="curvy lines"
           sx={{ pointerEvents: 'none', position: 'absolute', top: -180 }}
         />
@@ -31,7 +31,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="./img/productValues1.svg"
+                src="/img/productValues1.svg"
                 alt="suitcase"
                 sx={{ height: 55 }}
               />
@@ -52,7 +52,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="./img/productValues2.svg"
+                src="/img/productValues2.svg"
                 alt="graph"
                 sx={{ height: 55 }}
               />
@@ -71,7 +71,7 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="./img/productValues3.svg"
+                src="/img/productValues3.svg"
                 alt="clock"
                 sx={{ height: 55 }}
               />
