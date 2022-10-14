@@ -4,7 +4,7 @@ import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 
 const backgroundImage =
-  'https://source.unsplash.com/AQTA5E6mCNU';
+  'https://source.unsplash.com/dWYU3i-mqEo';
 
 export default function ProductHero() {
   return (
@@ -22,15 +22,15 @@ export default function ProductHero() {
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        Feel free to join projects
       </Typography>
       <Typography
         color="inherit"
         align="center"
         variant="h5"
-        sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
+        sx={{ mb: 4, mt: 4 }}
       >
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
+        スキルに応じたGitHubリポジトリをご紹介
       </Typography>
       <Button
         color="secondary"
@@ -40,10 +40,10 @@ export default function ProductHero() {
         href="/sign-up/"
         sx={{ minWidth: 200 }}
       >
-        Register
+        新規会員登録
       </Button>
       <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
-        Discover the experience
+        無料の会員登録はこちらから
       </Typography>
     </ProductHeroLayout>
   );

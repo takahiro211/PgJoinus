@@ -39,11 +39,11 @@ function SignUp() {
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
-            Sign Up
+            新規会員登録
           </Typography>
           <Typography variant="body2" align="center">
             <Link href="/sign-in/" underline="always">
-              Already have an account?
+              既にアカウントをお持ちの方はこちら
             </Link>
           </Typography>
         </React.Fragment>
@@ -115,7 +115,7 @@ function SignUp() {
                 color="secondary"
                 fullWidth
               >
-                {submitting || sent ? 'In progress…' : 'Sign Up'}
+                {submitting || sent ? '登録処理中…' : '新規会員登録'}
               </FormButton>
             </Box>
           )}

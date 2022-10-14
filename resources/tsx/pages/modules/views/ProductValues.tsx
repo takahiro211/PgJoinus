@@ -36,14 +36,14 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                The best luxury hotels
+                無料でOSSへ参加
               </Typography>
               <Typography variant="h5">
                 {
-                  'From the latest trendy boutique hotel to the iconic palace with XXL pool'
+                  'OSS中心であるため使用料は完全無料。'
                 }
                 {
-                  ', go for a mini-vacation just a few subway stops away from your home.'
+                  '実践レベルのソースに触れる機会を得られます'
                 }
               </Typography>
             </Box>
@@ -57,13 +57,13 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                New experiences
+                リスキリング支援
               </Typography>
               <Typography variant="h5">
                 {
-                  'Privatize a pool, take a Japanese bath or wake up in 900m2 of garden… '
+                  '未経験言語にチャレンジしたい方、あるいはプログラミング経験が浅い方でも'
                 }
-                {'your Sundays will not be alike.'}
+                {'参画可能なプロジェクトを見つけられます。'}
               </Typography>
             </Box>
           </Grid>
@@ -76,11 +76,11 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                Exclusive rates
+                プログラマーの募集
               </Typography>
               <Typography variant="h5">
-                {'By registering, you will access specially negotiated rates '}
-                {'that you will not find anywhere else.'}
+                {'自身のGitHubリポジトリを掲載可能。'}
+                {'学ぶ意欲の高いプログラマーからの参画が期待できます。'}
               </Typography>
             </Box>
           </Grid>

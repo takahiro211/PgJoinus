@@ -54,7 +54,7 @@ function ProductHowItWorks() {
           }}
         />
         <Typography variant="h4" marked="center" component="h2" sx={{ mb: 14 }}>
-          How it works
+          参加の流れ
         </Typography>
         <div>
           <Grid container spacing={5}>
@@ -68,7 +68,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  一覧または検索から興味のあるリポジトリを探します。
                 </Typography>
               </Box>
             </Grid>
@@ -82,8 +82,7 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so
-                  be quick.
+                  ソースをクローンし開発作業完了後、プルリクエストを作成します。
                 </Typography>
               </Box>
             </Grid>
@@ -97,8 +96,8 @@ function ProductHowItWorks() {
                   sx={image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  {'プルリクエストが受け入れられ作業内容が無事マージされれば完了です。'}
+                  {'再びPGJoinUsで新しいプロジェクトを探しましょう。'}
                 </Typography>
               </Box>
             </Grid>
@@ -112,7 +111,7 @@ function ProductHowItWorks() {
           href="/sign-up/"
           sx={{ mt: 8 }}
         >
-          Get started
+          プロジェクトを探す
         </Button>
       </Container>
     </Box>

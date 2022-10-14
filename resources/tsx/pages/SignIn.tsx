@@ -38,16 +38,16 @@ function SignIn() {
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
-            Sign In
+            ログイン
           </Typography>
           <Typography variant="body2" align="center">
-            {'Not a member yet? '}
+            {''}
             <Link
               href="/sign-up/"
               align="center"
               underline="always"
             >
-              Sign Up here
+              会員登録がお済みでない方はこちら
             </Link>
           </Typography>
         </React.Fragment>
@@ -98,14 +98,14 @@ function SignIn() {
                 color="secondary"
                 fullWidth
               >
-                {submitting || sent ? 'In progress…' : 'Sign In'}
+                {submitting || sent ? 'ログイン処理中…' : 'ログイン'}
               </FormButton>
             </Box>
           )}
         </Form>
         <Typography align="center">
           <Link underline="always" href="/forgot-password/">
-            Forgot password?
+            パスワードを忘れた場合
           </Link>
         </Typography>
       </AppForm>

@@ -10,8 +10,8 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        PGJoinUs
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -33,12 +33,12 @@ const iconStyle = {
 
 const LANGUAGES = [
   {
-    code: 'en-US',
-    name: 'English',
+    code: 'light',
+    name: 'ライト',
   },
   {
-    code: 'fr-FR',
-    name: 'Français',
+    code: 'night',
+    name: 'ナイト',
   },
 ];
 
@@ -92,7 +92,7 @@ export default function AppFooter() {
           </Grid>
           <Grid item xs={6} sm={8} md={4}>
             <Typography variant="h6" marked="left" gutterBottom>
-              Language
+              テーマを切り替える
             </Typography>
             <TextField
               select

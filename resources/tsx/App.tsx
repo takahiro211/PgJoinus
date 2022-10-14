@@ -5,10 +5,8 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
-import AppBar from './components/AppBar';
-import Drawer from './components/Drawer';
+import ForgotPassword from './pages/ForgotPassword';
 import Home from './pages/Home';
-import { Container, Box, } from "@mui/material";
 import { createRoot } from 'react-dom/client';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
@@ -22,6 +20,7 @@ const App = () => {
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/private" element={<Privacy />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
         </BrowserRouter>
       </React.StrictMode>

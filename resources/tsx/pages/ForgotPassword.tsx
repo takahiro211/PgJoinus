@@ -37,11 +37,11 @@ function ForgotPassword() {
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
-            Forgot your password?
+            パスワードを忘れた場合
           </Typography>
           <Typography variant="body2" align="center">
-            {"Enter your email address below and we'll " +
-              'send you a link to reset your password.'}
+            {"メールアドレスを入力してください。" +
+              'お送りするリンクよりパスワードリセットを実施してください。'}
           </Typography>
         </React.Fragment>
         <Form
@@ -79,7 +79,7 @@ function ForgotPassword() {
                 color="secondary"
                 fullWidth
               >
-                {submitting || sent ? 'In progress…' : 'Send reset link'}
+                {submitting || sent ? '送信中…' : '送信する'}
               </FormButton>
             </Box>
           )}

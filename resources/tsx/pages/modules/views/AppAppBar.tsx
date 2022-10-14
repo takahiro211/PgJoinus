@@ -33,7 +33,7 @@ function AppAppBar() {
               href="/sign-in/"
               sx={rightLink}
             >
-              {'Sign In'}
+              {'ログイン'}
             </Link>
             <Link
               variant="h6"
@@ -41,7 +41,7 @@ function AppAppBar() {
               href="/sign-up/"
               sx={{ ...rightLink, color: 'secondary.main' }}
             >
-              {'Sign Up'}
+              {'新規登録'}
             </Link>
           </Box>
         </Toolbar>
