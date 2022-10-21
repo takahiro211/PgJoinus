@@ -23,6 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('users', function () {
     return User::all();
 });
+Route::middleware('auth:sanctum')->get('auth', function () {
+    return true;
+});
 
 Route::post('login', [LoginController::class, 'login']);
 
