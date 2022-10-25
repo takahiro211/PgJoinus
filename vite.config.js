@@ -14,7 +14,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/ts/App.tsx',
+                'resources/tsx/App.tsx',
             ],
             refresh: true,
         }),
@@ -22,7 +22,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': '/resources/ts',
+            '@': '/resources/tsx',
         },
     },
 });
