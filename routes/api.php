@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware('auth:sanctum')->get('users', function () {
-    return User::all();
+    return User::where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
 });
 Route::middleware('auth:sanctum')->get('auth', function () {
     return true;
