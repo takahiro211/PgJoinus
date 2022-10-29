@@ -33,6 +33,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/users', function () {
     return User::where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
 });
-Route::middleware('auth:sanctum')->get('/users', function () {
-    return User::where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
+Route::get('/projects', function (Request $request) {
+    return DB::table('posts')
+        ->select(
+            'posts.id',
+            'posts.title',
+            'posts.description',
+            'posts.detail',
+            'posts.url',
+            'posts.author',
+            'posts.skill',
+            'posts.free_tag',
+            'posts.created_at',
+            'posts.updated_at',
+            'users.name',
+        )
+        ->join('users', 'users.id', '=', 'posts.author')
+        ->where('posts.id', '=', $request->postId)
+        ->get();
 });
