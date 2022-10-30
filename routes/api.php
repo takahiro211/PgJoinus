@@ -25,6 +25,9 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/guest-posts', function () {
     return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
 });
+Route::get('/faq', function () {
+    return DB::table('faq_list')->get();
+});
 
 // PrivateRoutes
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
