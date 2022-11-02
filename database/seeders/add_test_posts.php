@@ -21,7 +21,7 @@ class add_test_posts extends Seeder
             [
                 'title' => 'ひらがなをカタカナに変換するnpmライブラリ開発です',
                 'description' => 'issueが増えてきたので対応できる方いませんか？',
-                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題が合った際は修正をお願いします。',
+                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題があった際は修正をお願いします。',
                 'url' => 'https://github.com/takahiro211/pg-joinus-front',
                 'author' => 6,
                 'skill' => json_encode(['JavaScript', 'PHP', 'React', 'TypeScript', 'Laravel']),
@@ -32,7 +32,7 @@ class add_test_posts extends Seeder
             [
                 'title' => '世界各国の現在時刻を取得するnpmライブラリ開発です',
                 'description' => '以下のチケットの対応をお願いしたいです。',
-                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題が合った際は修正をお願いします。',
+                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題があった際は修正をお願いします。',
                 'url' => 'https://github.com/takahiro211/pg-joinus-front',
                 'author' => 6,
                 'skill' => json_encode(['JavaScript', 'PHP', 'React', 'TypeScript', 'Laravel']),
@@ -43,7 +43,7 @@ class add_test_posts extends Seeder
             [
                 'title' => 'ECサイトをOSSで開発しています',
                 'description' => 'テストだけやってみてもらえませんか',
-                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題が合った際は修正をお願いします。',
+                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題があった際は修正をお願いします。',
                 'url' => 'https://github.com/takahiro211/pg-joinus-front',
                 'author' => 6,
                 'skill' => json_encode(['PHP', 'React', 'TypeScript', 'Laravel']),
@@ -54,7 +54,7 @@ class add_test_posts extends Seeder
             [
                 'title' => 'PgJoinUsというOSSサイトを開発しています',
                 'description' => '何か機能追加のプルリクエストが欲しいです',
-                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題が合った際は修正をお願いします。',
+                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題があった際は修正をお願いします。',
                 'url' => 'https://github.com/takahiro211/pg-joinus-front',
                 'author' => 6,
                 'skill' => json_encode(['JavaScript', 'PHP', 'React', 'TypeScript', 'Laravel']),
@@ -65,7 +65,7 @@ class add_test_posts extends Seeder
             [
                 'title' => 'あなたも弊社の有名OSSのコミッターになりませんか！？',
                 'description' => 'OSSへのcontributionはあなたの肩書きになります！！',
-                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題が合った際は修正をお願いします。',
+                'detail' => 'こんにちは。閲覧ありがとうございます。\n JavaScript未経験の方でも構いません。\n修正いただきプルリクエストをお願いします。\n\n私の方でレビューしますので、問題があった際は修正をお願いします。',
                 'url' => 'https://github.com/takahiro211/pg-joinus-front',
                 'author' => 6,
                 'skill' => json_encode(['JavaScript', 'PHP', 'React', 'TypeScript', 'Laravel']),
