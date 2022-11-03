@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\Project\ProjectDetailController;
+use App\Http\Controllers\Api\Project\FavoriteController;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -39,31 +41,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/users', function () {
     return User::where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
 });
-Route::middleware('auth:sanctum')->get('/projects', function (Request $request) {
-    return DB::table('posts')
-        ->select(
-            'posts.id',
-            'posts.title',
-            'posts.description',
-            'posts.detail',
-            'posts.url',
-            'posts.author',
-            'posts.skill',
-            'posts.free_tag',
-            'posts.created_at',
-            'posts.updated_at',
-            'users.name',
-            'comments.comment',
-            'comments.user_id',
-            'comments.created_at as comment_date'
-        )
-        ->join('users', 'users.id', '=', 'posts.author')
-        ->leftjoin('comments', 'posts.id', '=', 'comments.post_id')
-        ->where('posts.id', '=', $request->postId)
-        ->get();
-});
+Route::middleware('auth:sanctum')->get('/projects', [ProjectDetailController::class, 'getDetail']);
 Route::middleware('auth:sanctum')->get('/comments', function (Request $request) {
     return DB::table('comments')
         ->where('post_id', '=', $request->postId)
         ->get();
 });
+
+Route::middleware('auth:sanctum')->get('/favorite', [FavoriteController::class, 'favorite']);
+Route::middleware('auth:sanctum')->get('/favorite_remove', [FavoriteController::class, 'remove']);
