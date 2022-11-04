@@ -10,6 +10,34 @@ use Illuminate\Support\Facades\DB;
 
 class FavoriteController extends Controller
 {
+    // お気に入り一覧を返却
+    public function favoriteList()
+    {
+        // ユーザーID取得
+        $userId = Auth::id();
+
+        // お気に入り登録済みプロジェクト一覧を取得
+        $ret = DB::table('favorites')
+            ->select(
+                'posts.id',
+                'posts.title',
+                'posts.description',
+                'posts.detail',
+                'posts.url',
+                'posts.author',
+                'posts.skill',
+                'posts.free_tag',
+                'posts.created_at',
+                'posts.updated_at'
+            )
+            ->where('user_id', $userId)
+            ->join('posts', 'favorites.post_id', '=', 'posts.id')
+            ->get();
+
+        // 返却
+        return response()->json($ret, Response::HTTP_OK);
+    }
+
     public function favorite(Request $request)
     {
         // ユーザーID取得

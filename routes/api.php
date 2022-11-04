@@ -48,5 +48,6 @@ Route::middleware('auth:sanctum')->get('/comments', function (Request $request) 
         ->get();
 });
 
-Route::middleware('auth:sanctum')->get('/favorite', [FavoriteController::class, 'favorite']);
-Route::middleware('auth:sanctum')->get('/favorite_remove', [FavoriteController::class, 'remove']);
+Route::middleware('auth:sanctum')->get('/favorite-list', [FavoriteController::class, 'favoriteList']);
+Route::middleware('auth:sanctum')->post('/favorite', [FavoriteController::class, 'favorite']);
+Route::middleware('auth:sanctum')->post('/favorite-remove', [FavoriteController::class, 'remove']);
