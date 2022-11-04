@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Project\ProjectDetailController;
 use App\Http\Controllers\Api\Project\FavoriteController;
+use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -51,3 +52,4 @@ Route::middleware('auth:sanctum')->get('/comments', function (Request $request) 
 Route::middleware('auth:sanctum')->get('/favorite-list', [FavoriteController::class, 'favoriteList']);
 Route::middleware('auth:sanctum')->post('/favorite', [FavoriteController::class, 'favorite']);
 Route::middleware('auth:sanctum')->post('/favorite-remove', [FavoriteController::class, 'remove']);
+Route::middleware('auth:sanctum')->post('/name-edit', [UserController::class, 'nameEdit']);
