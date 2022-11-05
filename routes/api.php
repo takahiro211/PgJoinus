@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\Project\ProjectDetailController;
 use App\Http\Controllers\Api\Project\FavoriteController;
+use App\Http\Controllers\Api\Project\ProjectPostController;
 use App\Http\Controllers\Api\User\UserController;
 use Illuminate\Support\Facades\DB;
 
@@ -53,3 +54,8 @@ Route::middleware('auth:sanctum')->get('/favorite-list', [FavoriteController::cl
 Route::middleware('auth:sanctum')->post('/favorite', [FavoriteController::class, 'favorite']);
 Route::middleware('auth:sanctum')->post('/favorite-remove', [FavoriteController::class, 'remove']);
 Route::middleware('auth:sanctum')->post('/name-edit', [UserController::class, 'nameEdit']);
+Route::middleware('auth:sanctum')->get('/tag-master', function () {
+    return DB::table('tag_master')->get();
+});
+
+Route::middleware('auth:sanctum')->post('/post', [ProjectPostController::class, 'post']);
