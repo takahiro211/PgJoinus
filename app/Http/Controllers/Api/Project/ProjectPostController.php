@@ -17,8 +17,13 @@ class ProjectPostController extends Controller
         $userId = Auth::id();
 
         // skillとfree_tagを配列に格納
-        $skill = explode(",", $request->postData['skill']);
-        $freeTag = explode(",", $request->postData['free_tag']);
+        if ($request->postData['skill'] == "" || $request->postData['free_tag'] == "") {
+            $skill = json_encode(["未選択"]);
+            $freeTag = json_encode(["未選択"]);
+        } else {
+            $skill = json_encode(explode(",", $request->postData['skill']));
+            $freeTag = json_encode(explode(",", $request->postData['free_tag']));
+        }
 
         // posts
         $insertId = DB::table('posts')->insertGetId([
@@ -27,8 +32,8 @@ class ProjectPostController extends Controller
             'detail' => $request->postData['detail'],
             'url' => $request->postData['url'],
             'author' => $userId,
-            'skill' => json_encode($skill),
-            'free_tag' => json_encode($freeTag),
+            'skill' => $skill,
+            'free_tag' => $freeTag,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);

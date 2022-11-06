@@ -85,12 +85,6 @@ class add_test_tag_master extends Seeder
                 'updated_at' => new DateTime(),
             ],
             [
-                'tag_name' => 'Python',
-                'is_enabled' => true,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ],
-            [
                 'tag_name' => 'AWS',
                 'is_enabled' => true,
                 'created_at' => new DateTime(),
@@ -104,12 +98,6 @@ class add_test_tag_master extends Seeder
             ],
             [
                 'tag_name' => 'Kotlin',
-                'is_enabled' => true,
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-            ],
-            [
-                'tag_name' => 'Python',
                 'is_enabled' => true,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
