@@ -11,6 +11,21 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectPostController extends Controller
 {
+    public function myPosts()
+    {
+        // ユーザーID取得
+        $userId = Auth::id();
+
+        // お気に入り登録済みプロジェクト一覧を取得
+        $ret = DB::table('posts')
+            ->where('author', $userId)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // 返却
+        return response()->json($ret, Response::HTTP_OK);
+    }
+
     public function post(Request $request)
     {
         // ユーザーID取得

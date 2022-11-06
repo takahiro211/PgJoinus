@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Project;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Controllers\Controller;
+use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,7 @@ class FavoriteController extends Controller
         $userId = Auth::id();
 
         // お気に入り登録済みプロジェクト一覧を取得
+        // ※新しくお気に入り登録した順(降順)
         $ret = DB::table('favorites')
             ->select(
                 'posts.id',
@@ -32,6 +34,7 @@ class FavoriteController extends Controller
             )
             ->where('user_id', $userId)
             ->join('posts', 'favorites.post_id', '=', 'posts.id')
+            ->orderBy('favorites.created_at', 'desc')
             ->get();
 
         // 返却
@@ -54,7 +57,9 @@ class FavoriteController extends Controller
             // favoriteテーブルにレコードを追加
             DB::table('favorites')->insert([
                 'post_id' => $request->postId,
-                'user_id' => $userId
+                'user_id' => $userId,
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
             ]);
         }
 

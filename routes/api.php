@@ -27,6 +27,9 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/guest-posts', function () {
+    return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->limit(5)->get();
+});
+Route::get('/latest-posts', function () {
     return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
 });
 Route::get('/faq', function () {
@@ -59,3 +62,8 @@ Route::middleware('auth:sanctum')->get('/tag-master', function () {
 });
 
 Route::middleware('auth:sanctum')->post('/post', [ProjectPostController::class, 'post']);
+Route::middleware('auth:sanctum')->get('/latest-posts', function () {
+    return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
+});
+
+Route::middleware('auth:sanctum')->get('/my-posts', [ProjectPostController::class, 'myPosts']);
