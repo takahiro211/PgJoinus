@@ -33,7 +33,7 @@ class ProjectDetailController extends Controller
             ->join('users', 'users.id', '=', 'posts.author')
             ->leftjoin('comments', 'posts.id', '=', 'comments.post_id')
             ->where('posts.id', '=', $request->postId)
-            ->get();
+            ->paginate(10);
 
         // お気に入り登録しているかどうかを判定
         $isFavorite = DB::table('favorites')

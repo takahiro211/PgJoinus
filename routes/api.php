@@ -26,12 +26,7 @@ use Illuminate\Support\Facades\DB;
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/register', [RegisterController::class, 'register']);
-Route::get('/guest-posts', function () {
-    return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->limit(5)->get();
-});
-Route::get('/latest-posts', function () {
-    return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
-});
+Route::get('/guest-posts', [ProjectPostController::class, 'gestPosts']);
 Route::get('/faq', function () {
     return DB::table('faq_list')->get();
 });
@@ -63,7 +58,9 @@ Route::middleware('auth:sanctum')->get('/tag-master', function () {
 
 Route::middleware('auth:sanctum')->post('/post', [ProjectPostController::class, 'post']);
 Route::middleware('auth:sanctum')->get('/latest-posts', function () {
-    return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
+    return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->paginate(10);
 });
 
 Route::middleware('auth:sanctum')->get('/my-posts', [ProjectPostController::class, 'myPosts']);
+
+Route::middleware('auth:sanctum')->get('/rank', [FavoriteController::class, 'rank']);

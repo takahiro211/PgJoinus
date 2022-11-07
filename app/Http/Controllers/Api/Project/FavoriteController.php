@@ -35,7 +35,7 @@ class FavoriteController extends Controller
             ->where('user_id', $userId)
             ->join('posts', 'favorites.post_id', '=', 'posts.id')
             ->orderBy('favorites.created_at', 'desc')
-            ->get();
+            ->paginate(10);
 
         // 返却
         return response()->json($ret, Response::HTTP_OK);
@@ -82,5 +82,34 @@ class FavoriteController extends Controller
 
         // 返却
         return response()->json(['favorite_remove' => true], Response::HTTP_OK);
+    }
+
+    // お気に入りの多い順ランキングを取得
+    public function rank()
+    {
+        // お気に入り登録済みプロジェクト一覧を取得
+        // ※新しくお気に入り登録した順(降順)
+        $ret = DB::table('favorites')
+            ->select(
+                'posts.id',
+                'posts.title',
+                'posts.description',
+                'posts.detail',
+                'posts.url',
+                'posts.author',
+                'posts.skill',
+                'posts.free_tag',
+                'posts.created_at',
+                'posts.updated_at',
+                DB::raw('count(*) as total')
+            )
+            ->join('posts', 'favorites.post_id', '=', 'posts.id')
+            ->groupBy('favorites.post_id')
+            ->orderBy('total', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        // 返却
+        return response()->json($ret, Response::HTTP_OK);
     }
 }

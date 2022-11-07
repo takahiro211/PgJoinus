@@ -11,6 +11,18 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectPostController extends Controller
 {
+    public function gestPosts()
+    {
+        // 未ログインゲスト向け新着プロジェクト一覧を取得
+        $ret = DB::table('posts')
+            ->where('created_at', '!=', null)
+            ->orderBy('created_at', 'desc')
+            ->limit(5)->get();
+
+        // 返却
+        return response()->json($ret, Response::HTTP_OK);
+    }
+
     public function myPosts()
     {
         // ユーザーID取得
@@ -20,7 +32,7 @@ class ProjectPostController extends Controller
         $ret = DB::table('posts')
             ->where('author', $userId)
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(10);
 
         // 返却
         return response()->json($ret, Response::HTTP_OK);
