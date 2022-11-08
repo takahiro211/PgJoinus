@@ -38,6 +38,44 @@ class ProjectPostController extends Controller
         return response()->json($ret, Response::HTTP_OK);
     }
 
+    public function userPosts(Request $request)
+    {
+
+        // ユーザーID取得
+        if ($request->userId == Auth::id()) {
+            return response()->json(['myPosts' => true], Response::HTTP_OK);
+        }
+
+        // お気に入り登録済みプロジェクト一覧を取得
+        $ret = DB::table('posts')
+            ->select(
+                'posts.id',
+                'posts.title',
+                'posts.description',
+                'posts.detail',
+                'posts.url',
+                'posts.author',
+                'posts.skill',
+                'posts.free_tag',
+                'posts.created_at',
+                'posts.updated_at',
+                'users.name'
+            )
+            ->where('author', $request->userId)
+            ->join('users', 'posts.author', '=', 'users.id')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        // フォロー中のユーザーかどうかを判定
+        $isFollowing = DB::table('followers')
+            ->where('follower_user_id', '=', Auth::id())
+            ->where('target_user_id', '=', $request->userId)
+            ->exists();
+
+        // 返却
+        return response()->json([$ret, ['is_following' => $isFollowing]], Response::HTTP_OK);
+    }
+
     public function post(Request $request)
     {
         // ユーザーID取得

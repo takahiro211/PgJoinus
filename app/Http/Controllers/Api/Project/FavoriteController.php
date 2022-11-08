@@ -87,8 +87,8 @@ class FavoriteController extends Controller
     // お気に入りの多い順ランキングを取得
     public function rank()
     {
-        // お気に入り登録済みプロジェクト一覧を取得
-        // ※新しくお気に入り登録した順(降順)
+        // お気に入り登録の多い順にプロジェクト一覧を取得
+        // ※新しくお気に入り登録された順(降順)
         $ret = DB::table('favorites')
             ->select(
                 'posts.id',
@@ -107,7 +107,7 @@ class FavoriteController extends Controller
             ->join('posts', 'favorites.post_id', '=', 'posts.id')
             ->groupBy('favorites.post_id')
             ->orderBy('total', 'desc')
-            ->orderBy('created_at', 'desc')
+            ->orderBy('posts.created_at', 'desc')
             ->paginate(10);
 
         // 返却

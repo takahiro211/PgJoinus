@@ -38,9 +38,11 @@ Route::get('/ads', function () {
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::middleware('auth:sanctum')->get('/users', function () {
-    return User::where('created_at', '!=', null)->orderBy('created_at', 'desc')->get();
-});
+Route::middleware('auth:sanctum')->get('/following', [UserController::class, 'following']);
+Route::middleware('auth:sanctum')->get('/follower', [UserController::class, 'follower']);
+Route::middleware('auth:sanctum')->post('/follow', [UserController::class, 'follow']);
+Route::middleware('auth:sanctum')->post('/remove', [UserController::class, 'remove']);
+
 Route::middleware('auth:sanctum')->get('/projects', [ProjectDetailController::class, 'getDetail']);
 Route::middleware('auth:sanctum')->get('/comments', function (Request $request) {
     return DB::table('comments')
@@ -62,5 +64,6 @@ Route::middleware('auth:sanctum')->get('/latest-posts', function () {
 });
 
 Route::middleware('auth:sanctum')->get('/my-posts', [ProjectPostController::class, 'myPosts']);
+Route::middleware('auth:sanctum')->get('/user-posts', [ProjectPostController::class, 'userPosts']);
 
 Route::middleware('auth:sanctum')->get('/rank', [FavoriteController::class, 'rank']);
