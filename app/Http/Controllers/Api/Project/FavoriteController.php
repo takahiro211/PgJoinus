@@ -101,6 +101,7 @@ class FavoriteController extends Controller
                 'posts.free_tag',
                 'posts.created_at',
                 'posts.updated_at',
+                'favorites.post_id',
                 DB::raw('count(*) as total')
             )
             ->join('posts', 'favorites.post_id', '=', 'posts.id')
