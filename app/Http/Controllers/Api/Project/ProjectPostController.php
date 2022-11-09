@@ -40,7 +40,6 @@ class ProjectPostController extends Controller
 
     public function userPosts(Request $request)
     {
-
         // ユーザーID取得
         if ($request->userId == Auth::id()) {
             return response()->json(['myPosts' => true], Response::HTTP_OK);
@@ -104,6 +103,53 @@ class ProjectPostController extends Controller
         ]);
 
         // 返却
-        return response()->json(['insertId', $insertId], Response::HTTP_OK);
+        return response()->json(['insertId' => $insertId], Response::HTTP_OK);
+    }
+
+    public function edit(Request $request)
+    {
+        // ユーザーID取得
+        $userId = Auth::id();
+
+        // skillとfree_tagを配列に格納
+        if ($request->postData['skill'] == "" || $request->postData['free_tag'] == "") {
+            $skill = json_encode(["未選択"]);
+            $freeTag = json_encode(["未選択"]);
+        } else {
+            $skill = json_encode(explode(",", $request->postData['skill']));
+            $freeTag = json_encode(explode(",", $request->postData['free_tag']));
+        }
+
+        // update ※自分の投稿じゃないと更新できない
+        $updateId = DB::table('posts')
+            ->where('id', $request->postData['id'])
+            ->where('author', $userId)
+            ->update([
+                'title' => $request->postData['title'],
+                'description' => $request->postData['description'],
+                'detail' => $request->postData['detail'],
+                'url' => $request->postData['url'],
+                'skill' => $skill,
+                'free_tag' => $freeTag,
+                'updated_at' => new DateTime(),
+            ]);
+
+        // 返却
+        return response()->json(['update' => $updateId], Response::HTTP_OK);
+    }
+
+    public function delete(Request $request)
+    {
+        // ユーザーID取得
+        $userId = Auth::id();
+
+        // delete ※自分の投稿じゃないと削除できない
+        DB::table('posts')
+            ->where('id', $request->postData['id'])
+            ->where('author', $userId)
+            ->delete();
+
+        // 返却
+        return response()->json(['delete' => true], Response::HTTP_OK);
     }
 }

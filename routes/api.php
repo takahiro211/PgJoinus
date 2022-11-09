@@ -59,6 +59,8 @@ Route::middleware('auth:sanctum')->get('/tag-master', function () {
 });
 
 Route::middleware('auth:sanctum')->post('/post', [ProjectPostController::class, 'post']);
+Route::middleware('auth:sanctum')->post('/edit', [ProjectPostController::class, 'edit']);
+Route::middleware('auth:sanctum')->post('/delete', [ProjectPostController::class, 'delete']);
 Route::middleware('auth:sanctum')->get('/latest-posts', function () {
     return DB::table('posts')->where('created_at', '!=', null)->orderBy('created_at', 'desc')->paginate(10);
 });
