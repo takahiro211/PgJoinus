@@ -1,0 +1,15 @@
+insert into `pg-joinus-api`.users(id,name,email,email_verified_at,password,remember_token,created_at,updated_at) values 
+ (1,'テストユーザー','user@example.com',null,'$2y$10$CiS4RgIFrjfgf1WdPt6cVOyCEQqFuPqTe2D1fxm0LIJu1e.AQJn4i',null,TIMESTAMP '2022-10-25 22:09:53.000',TIMESTAMP '2022-11-04 23:16:11.000')
+,(2,'user2','user2@example.com',null,'$2y$10$2VT0xLc5wudfOa7tLXg2eO/tlIpJt7YzlkWTNYb5nFTW6BC7uxDI.',null,null,null)
+,(3,'user3','user3@example.com',null,'$2y$10$0Ih.qfi3s4tEFY0RhavT.ONR6E6cZ7QPKLkr1QL54KLeFVEgM8ttq',null,null,null)
+,(4,'user4','user4@example.com',null,'$2y$10$TWpyjVw4zOcAbXxGbWj0OutMQTrefWR7xIfqUluAzxu2I2AT6v8/S',null,null,null)
+,(5,'user5','user5@example.com',null,'$2y$10$gQP0eFjQBfF3mV8XOoDBvek.KoP8dXJkgbEBh3GsNYUaizloYP5hO',null,null,null)
+,(6,'なまえ','ytakahiro211@gmail.com',null,'$2y$10$AvUihiaznh/GggYHyiPFrenzVZ8SQcAMFsbOED9tRqdT1iem2./l2',null,TIMESTAMP '2022-10-25 22:09:53.000',TIMESTAMP '2022-10-25 22:09:53.000')
+,(10,'太郎','password',null,'$2y$10$aE4PfxWNeQHfLFbx0kZ76OGorqkgIXuXsC.F0MT6yPD94X4sc4Xey',null,TIMESTAMP '2022-10-26 13:20:13.000',TIMESTAMP '2022-10-26 13:20:13.000')
+,(11,'太郎','user_product1@example.com',null,'$2y$10$aUk9pS5N/8by0eoV73TVf.eEdb..CSQaczwLt4tjEb6NXLAPlYLbO',null,TIMESTAMP '2022-10-26 13:21:14.000',TIMESTAMP '2022-10-26 13:21:14.000')
+,(12,'React勉強太郎','user_production1@example.com',null,'$2y$10$JcCGHlCW/zrJWe8Tk431qOUpSoOsOxHhR.npsiYcEDsGvhzV/QXVe',null,TIMESTAMP '2022-10-26 13:21:38.000',TIMESTAMP '2022-11-09 15:28:38.000')
+,(13,'新規登録後ログイン処理削除太郎','sinkitourokugosakujotarou@test.test',null,'$2y$10$TRmL.Z2MiXyjxNYtc/LX9OVg8q2E0buTcPnSJisEzh9JFDZ5ZJtEu',null,TIMESTAMP '2022-10-26 13:27:25.000',TIMESTAMP '2022-10-26 13:27:25.000')
+,(14,'新規登録後ログイン処理削除太郎','shinkitourokugosakujotarou@test.test',null,'$2y$10$SzM08mWjxJSwt5w2XCOVvuaL/TSmLbkNwK/uxupovBotpXgHOA3Ka',null,TIMESTAMP '2022-10-26 13:27:44.000',TIMESTAMP '2022-10-26 13:27:44.000')
+,(15,'ライオン太郎@フリーランス','panda@example.com',null,'$2y$10$aXG/c9f05gY8hYyLSw4lLe/v2k57DPHdCF6EONfjAuR4qm4R/d142',null,TIMESTAMP '2022-10-26 17:31:13.000',TIMESTAMP '2022-11-09 15:35:34.000')
+,(16,'ICEMAN','user7@example.com',null,'$2y$10$isKw7Wb13OAk3dqStXpM2.OC5ZLsoT2A2tOUDxCCub67KoAUck8uG',null,TIMESTAMP '2022-10-28 19:59:39.000',TIMESTAMP '2022-11-09 15:40:38.000')
+;
