@@ -37,9 +37,9 @@ docker run --rm \
 
 `cp .env.example .env`
 
-### ルートで sail を起動
+### sail コマンドでコンテナを起動
 
-プロジェクトのルート(先頭)で以下のコマンドを実行しコンテナを起動します。
+ルートで以下のコマンドを実行しコンテナを起動します。
 
 `./vendor/bin/sail up -d`
 
@@ -51,8 +51,18 @@ docker run --rm \
 
 `./vendor/bin/sail artisan migrate`
 
-### (初回)データベースに初回データを import
+### データベースに初回データを import
 
 以下の SQL ファイルを実行しコンテナの DB に データを import してください。
 
-`.sql`
+https://github.com/takahiro211/pg-joinus-api/blob/main/database/initial/
+
+```
+pg-joinus-api.ads.sql
+pg-joinus-api.faq_list.sql
+pg-joinus-api.favorites.sql
+pg-joinus-api.followers.sql
+pg-joinus-api.posts.sql
+pg-joinus-api.tag_master.sql
+pg-joinus-api.users.sql
+```
